@@ -820,6 +820,22 @@ fileprivate func makeRadioButtonsFrom(abi: WindowsFoundation.IInspectable) -> An
     return RadioButtons(fromAbi: abi)
 }
 
+fileprivate func makeRefreshContainerFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return RefreshContainer(fromAbi: abi)
+}
+
+fileprivate func makeRefreshRequestedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return RefreshRequestedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeRefreshStateChangedEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return RefreshStateChangedEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeRefreshVisualizerFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return RefreshVisualizer(fromAbi: abi)
+}
+
 fileprivate func makeRelativePanelFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return RelativePanel(fromAbi: abi)
 }
@@ -2210,6 +2226,10 @@ public class __MakeFromAbi: MakeFromAbi {
             case "ProgressRingTemplateSettings": return makeProgressRingTemplateSettingsFrom(abi: abi)
             case "RadioButton": return makeRadioButtonFrom(abi: abi)
             case "RadioButtons": return makeRadioButtonsFrom(abi: abi)
+            case "RefreshContainer": return makeRefreshContainerFrom(abi: abi)
+            case "RefreshRequestedEventArgs": return makeRefreshRequestedEventArgsFrom(abi: abi)
+            case "RefreshStateChangedEventArgs": return makeRefreshStateChangedEventArgsFrom(abi: abi)
+            case "RefreshVisualizer": return makeRefreshVisualizerFrom(abi: abi)
             case "RelativePanel": return makeRelativePanelFrom(abi: abi)
             case "RowDefinition": return makeRowDefinitionFrom(abi: abi)
             case "RowDefinitionCollection": return makeRowDefinitionCollectionFrom(abi: abi)

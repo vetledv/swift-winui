@@ -64,6 +64,12 @@ public typealias Orientation = __x_ABI_CMicrosoft_CUI_CXaml_CControls_COrientati
 public typealias PasswordRevealMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPasswordRevealMode
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility)
 public typealias PipsPagerButtonVisibility = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPipsPagerButtonVisibility
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshpulldirection)
+public typealias RefreshPullDirection = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshPullDirection
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizerorientation)
+public typealias RefreshVisualizerOrientation = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerOrientation
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizerstate)
+public typealias RefreshVisualizerState = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.requirespointer)
 public typealias RequiresPointer = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRequiresPointer
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollbarvisibility)
@@ -12157,6 +12163,305 @@ open class RadioButtons : WinUI.Control {
     }
 }
 
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer)
+open class RefreshContainer : WinUI.ContentControl {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IRefreshContainer
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer>?) -> RefreshContainer? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IRefreshContainerFactory : __ABI_Microsoft_UI_Xaml_Controls.IRefreshContainerFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.RefreshContainer"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IRefreshContainerFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _IRefreshContainerStatics: __ABI_Microsoft_UI_Xaml_Controls.IRefreshContainerStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.RefreshContainer"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.pulldirectionproperty)
+    public class var pullDirectionProperty : WinUI.DependencyProperty! {
+        get { try! _IRefreshContainerStatics.get_PullDirectionPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.visualizerproperty)
+    public class var visualizerProperty : WinUI.DependencyProperty! {
+        get { try! _IRefreshContainerStatics.get_VisualizerPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.requestrefresh)
+    public func requestRefresh() throws {
+        try _default.RequestRefreshImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.pulldirection)
+    public var pullDirection : RefreshPullDirection {
+        get { try! _default.get_PullDirectionImpl() }
+        set { try! _default.put_PullDirectionImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.visualizer)
+    public var visualizer : RefreshVisualizer! {
+        get { try! _default.get_VisualizerImpl() }
+        set { try! _default.put_VisualizerImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.refreshrequested)
+    public lazy var refreshRequested : Event<TypedEventHandler<RefreshContainer?, RefreshRequestedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_RefreshRequestedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_RefreshRequestedImpl($0)
+       }
+      )
+    }()
+
+    internal enum IContentControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIContentControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IContentControlOverrides
+        internal typealias Class = RefreshContainer
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IRefreshContainer
+        }
+    }
+    internal typealias Composable = IContentControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshrequestedeventargs)
+public final class RefreshRequestedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IRefreshRequestedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshRequestedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshRequestedEventArgs>?) -> RefreshRequestedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshrequestedeventargs.getdeferral)
+    public func getDeferral() throws -> WindowsFoundation.Deferral! {
+        try _default.GetDeferralImpl()
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshstatechangedeventargs)
+public final class RefreshStateChangedEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IRefreshStateChangedEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshStateChangedEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshStateChangedEventArgs>?) -> RefreshStateChangedEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshstatechangedeventargs.newstate)
+    public var newState : RefreshVisualizerState {
+        get { try! _default.get_NewStateImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshstatechangedeventargs.oldstate)
+    public var oldState : RefreshVisualizerState {
+        get { try! _default.get_OldStateImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer)
+open class RefreshVisualizer : WinUI.Control {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IRefreshVisualizer
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer>?) -> RefreshVisualizer? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IRefreshVisualizerFactory : __ABI_Microsoft_UI_Xaml_Controls.IRefreshVisualizerFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.RefreshVisualizer"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IRefreshVisualizerFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _IRefreshVisualizerStatics: __ABI_Microsoft_UI_Xaml_Controls.IRefreshVisualizerStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.RefreshVisualizer"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.contentproperty)
+    public class var contentProperty : WinUI.DependencyProperty! {
+        get { try! _IRefreshVisualizerStatics.get_ContentPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.infoproviderproperty)
+    public class var infoProviderProperty : WinUI.DependencyProperty! {
+        get { try! _IRefreshVisualizerStatics.get_InfoProviderPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.orientationproperty)
+    public class var orientationProperty : WinUI.DependencyProperty! {
+        get { try! _IRefreshVisualizerStatics.get_OrientationPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.stateproperty)
+    public class var stateProperty : WinUI.DependencyProperty! {
+        get { try! _IRefreshVisualizerStatics.get_StatePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.requestrefresh)
+    public func requestRefresh() throws {
+        try _default.RequestRefreshImpl()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.content)
+    public var content : WinUI.UIElement! {
+        get { try! _default.get_ContentImpl() }
+        set { try! _default.put_ContentImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.orientation)
+    public var orientation : RefreshVisualizerOrientation {
+        get { try! _default.get_OrientationImpl() }
+        set { try! _default.put_OrientationImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.state)
+    public var state : RefreshVisualizerState {
+        get { try! _default.get_StateImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.refreshrequested)
+    public lazy var refreshRequested : Event<TypedEventHandler<RefreshVisualizer?, RefreshRequestedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_RefreshRequestedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_RefreshRequestedImpl($0)
+       }
+      )
+    }()
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.refreshstatechanged)
+    public lazy var refreshStateChanged : Event<TypedEventHandler<RefreshVisualizer?, RefreshStateChangedEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_RefreshStateChangedImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_RefreshStateChangedImpl($0)
+       }
+      )
+    }()
+
+    internal enum IControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IControlOverrides
+        internal typealias Class = RefreshVisualizer
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IRefreshVisualizer
+        }
+    }
+    internal typealias Composable = IControlOverrides
+    deinit {
+        _default = nil
+    }
+}
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.relativepanel)
 open class RelativePanel : WinUI.Panel {
     private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IRelativePanel
@@ -20226,6 +20531,57 @@ extension WinUI.PipsPagerButtonVisibility {
     }
 }
 extension WinUI.PipsPagerButtonVisibility: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.RefreshPullDirection {
+    public static var leftToRight : WinUI.RefreshPullDirection {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshPullDirection_LeftToRight
+    }
+    public static var topToBottom : WinUI.RefreshPullDirection {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshPullDirection_TopToBottom
+    }
+    public static var rightToLeft : WinUI.RefreshPullDirection {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshPullDirection_RightToLeft
+    }
+    public static var bottomToTop : WinUI.RefreshPullDirection {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshPullDirection_BottomToTop
+    }
+}
+extension WinUI.RefreshPullDirection: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.RefreshVisualizerOrientation {
+    public static var auto : WinUI.RefreshVisualizerOrientation {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerOrientation_Auto
+    }
+    public static var normal : WinUI.RefreshVisualizerOrientation {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerOrientation_Normal
+    }
+    public static var rotate90DegreesCounterclockwise : WinUI.RefreshVisualizerOrientation {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerOrientation_Rotate90DegreesCounterclockwise
+    }
+    public static var rotate270DegreesCounterclockwise : WinUI.RefreshVisualizerOrientation {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerOrientation_Rotate270DegreesCounterclockwise
+    }
+}
+extension WinUI.RefreshVisualizerOrientation: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.RefreshVisualizerState {
+    public static var idle : WinUI.RefreshVisualizerState {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState_Idle
+    }
+    public static var peeking : WinUI.RefreshVisualizerState {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState_Peeking
+    }
+    public static var interacting : WinUI.RefreshVisualizerState {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState_Interacting
+    }
+    public static var pending : WinUI.RefreshVisualizerState {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState_Pending
+    }
+    public static var refreshing : WinUI.RefreshVisualizerState {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState_Refreshing
+    }
+}
+extension WinUI.RefreshVisualizerState: @retroactive Hashable, @retroactive Codable {}
 
 extension WinUI.RequiresPointer {
     public static var never : WinUI.RequiresPointer {
