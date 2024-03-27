@@ -34916,6 +34916,153 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__
         return handler
     }
 }
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xc50a5295, Data2: 0xfe75, Data3: 0x556c, Data4: ( 0x94,0x70,0xc3,0xff,0x7e,0x38,0x04,0x7e ))// c50a5295-fe75-556c-9470-c3ff7e38047e
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: WinUI.RefreshContainer? = .from(abi: ComPtr($1))
+        let args: WinUI.RefreshRequestedEventArgs? = .from(abi: ComPtr($2))
+        __unwrapped__instance(sender, args)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsBridge>
+internal class TypedEventHandlerRefreshContainer_RefreshRequestedEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs }
+
+    internal func InvokeImpl(_ sender: WinUI.RefreshContainer?, _ args: WinUI.RefreshRequestedEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WinUI.RefreshContainer?, WinUI.RefreshRequestedEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs
+    internal typealias SwiftABI = WinUI.TypedEventHandlerRefreshContainer_RefreshRequestedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try! _default.InvokeImpl(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0x30b40a40, Data2: 0xb0d5, Data3: 0x5ea9, Data4: ( 0x9b,0x3e,0x6c,0xc6,0x7d,0xea,0x8a,0xdc ))// 30b40a40-b0d5-5ea9-9b3e-6cc67dea8adc
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: WinUI.RefreshVisualizer? = .from(abi: ComPtr($1))
+        let args: WinUI.RefreshRequestedEventArgs? = .from(abi: ComPtr($2))
+        __unwrapped__instance(sender, args)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsBridge>
+internal class TypedEventHandlerRefreshVisualizer_RefreshRequestedEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs }
+
+    internal func InvokeImpl(_ sender: WinUI.RefreshVisualizer?, _ args: WinUI.RefreshRequestedEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WinUI.RefreshVisualizer?, WinUI.RefreshRequestedEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgs
+    internal typealias SwiftABI = WinUI.TypedEventHandlerRefreshVisualizer_RefreshRequestedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try! _default.InvokeImpl(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xafba2eff, Data2: 0xd872, Data3: 0x5c20, Data4: ( 0x9e,0x7e,0x76,0x96,0x5f,0xf7,0x95,0x4f ))// afba2eff-d872-5c20-9e7e-76965ff7954f
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsWrapper.release($0) },
+    Invoke: {
+        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let sender: WinUI.RefreshVisualizer? = .from(abi: ComPtr($1))
+        let args: WinUI.RefreshStateChangedEventArgs? = .from(abi: ComPtr($2))
+        __unwrapped__instance(sender, args)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsBridge>
+internal class TypedEventHandlerRefreshVisualizer_RefreshStateChangedEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgs }
+
+    internal func InvokeImpl(_ sender: WinUI.RefreshVisualizer?, _ args: WinUI.RefreshStateChangedEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WinUI.RefreshVisualizer?, WinUI.RefreshStateChangedEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgs
+    internal typealias SwiftABI = WinUI.TypedEventHandlerRefreshVisualizer_RefreshStateChangedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try! _default.InvokeImpl(sender, args)
+        }
+        return handler
+    }
+}
 private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CScrollView_IInspectable: WindowsFoundation.IID {
     .init(Data1: 0xfb5534e8, Data2: 0xbf2d, Data3: 0x52be, Data4: ( 0x8e,0x17,0xaf,0x8f,0x2f,0x03,0x86,0x0e ))// fb5534e8-bf2d-52be-8e17-af8f2f03860e
 }

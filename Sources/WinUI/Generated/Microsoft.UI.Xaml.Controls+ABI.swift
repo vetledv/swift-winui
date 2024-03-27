@@ -1062,6 +1062,38 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRadioButtonsStatics: Wi
     .init(Data1: 0xDE0BF0CA, Data2: 0x9AE8, Data3: 0x5B8A, Data4: ( 0x97,0x38,0x7D,0x98,0xB3,0x44,0xC0,0x39 ))// DE0BF0CA-9AE8-5B8A-9738-7D98B344C039
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer: WindowsFoundation.IID {
+    .init(Data1: 0x1C9778E8, Data2: 0xA427, Data3: 0x5F86, Data4: ( 0x9D,0x5E,0x02,0xDB,0x9B,0x2C,0x40,0x93 ))// 1C9778E8-A427-5F86-9D5E-02DB9B2C4093
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainerFactory: WindowsFoundation.IID {
+    .init(Data1: 0x5F228FA1, Data2: 0x2EA2, Data3: 0x52B5, Data4: ( 0xB7,0x8A,0x0C,0x13,0x3F,0x86,0xF0,0x20 ))// 5F228FA1-2EA2-52B5-B78A-0C133F86F020
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainerStatics: WindowsFoundation.IID {
+    .init(Data1: 0x875EF8A0, Data2: 0x74C2, Data3: 0x5201, Data4: ( 0xB7,0x08,0x50,0xA4,0x8E,0x7E,0x76,0x01 ))// 875EF8A0-74C2-5201-B708-50A48E7E7601
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshRequestedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xED97A956, Data2: 0x6019, Data3: 0x5329, Data4: ( 0x93,0x12,0xF8,0x85,0xB5,0xC7,0x74,0xCD ))// ED97A956-6019-5329-9312-F885B5C774CD
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshStateChangedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0x7BE897CE, Data2: 0x17C4, Data3: 0x5FDF, Data4: ( 0xB4,0x41,0xC6,0xEF,0x33,0x01,0xE0,0xF6 ))// 7BE897CE-17C4-5FDF-B441-C6EF3301E0F6
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer: WindowsFoundation.IID {
+    .init(Data1: 0xD6C55DB6, Data2: 0xD82D, Data3: 0x5B68, Data4: ( 0xBA,0x1D,0x28,0x59,0x3F,0xB0,0xAB,0x12 ))// D6C55DB6-D82D-5B68-BA1D-28593FB0AB12
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerFactory: WindowsFoundation.IID {
+    .init(Data1: 0x9D6F2BF2, Data2: 0x6628, Data3: 0x582A, Data4: ( 0x89,0x2B,0x68,0xC2,0x77,0x0C,0x17,0x3C ))// 9D6F2BF2-6628-582A-892B-68C2770C173C
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerStatics: WindowsFoundation.IID {
+    .init(Data1: 0x3540FE79, Data2: 0x590D, Data3: 0x546F, Data4: ( 0xBF,0x2A,0xA3,0x0D,0x46,0xE8,0xCD,0xFA ))// 3540FE79-590D-546F-BF2A-A30D46E8CDFA
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRelativePanel: WindowsFoundation.IID {
     .init(Data1: 0xC432FCC4, Data2: 0x88F2, Data3: 0x59D8, Data4: ( 0x9D,0x0E,0xA2,0x37,0xBE,0xAE,0xB0,0x7F ))// C432FCC4-88F2-59D8-9D0E-A237BEAEB07F
 }
@@ -15838,6 +15870,277 @@ public enum __ABI_Microsoft_UI_Xaml_Controls {
             let (value) = try ComPtrs.initialize { valueAbi in
                 _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRadioButtonsStatics.self) { pThis in
                     try CHECKED(pThis.pointee.lpVtbl.pointee.get_HeaderTemplateProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+    }
+
+    public class IRefreshContainer: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer }
+
+        internal func get_VisualizerImpl() throws -> WinUI.RefreshVisualizer? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_Visualizer(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_VisualizerImpl(_ value: WinUI.RefreshVisualizer?) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Visualizer(pThis, RawPointer(value)))
+            }
+        }
+
+        internal func get_PullDirectionImpl() throws -> WinUI.RefreshPullDirection {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshPullDirection = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_PullDirection(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_PullDirectionImpl(_ value: WinUI.RefreshPullDirection) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_PullDirection(pThis, value))
+            }
+        }
+
+        internal func add_RefreshRequestedImpl(_ handler: TypedEventHandler<WinUI.RefreshContainer?, WinUI.RefreshRequestedEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshContainer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_RefreshRequested(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_RefreshRequestedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_RefreshRequested(pThis, token))
+            }
+        }
+
+        internal func RequestRefreshImpl() throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.RequestRefresh(pThis))
+            }
+        }
+
+    }
+
+    public class IRefreshContainerFactory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainerFactory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.RefreshContainer.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IRefreshContainer {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainerFactory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IRefreshContainer(value!)
+        }
+
+    }
+
+    public class IRefreshContainerStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainerStatics }
+
+        internal func get_VisualizerPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_VisualizerProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_PullDirectionPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshContainerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_PullDirectionProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+    }
+
+    public class IRefreshRequestedEventArgs: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshRequestedEventArgs }
+
+        internal func GetDeferralImpl() throws -> WindowsFoundation.Deferral? {
+            let (result) = try ComPtrs.initialize { resultAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshRequestedEventArgs.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.GetDeferral(pThis, &resultAbi))
+                }
+            }
+            return .from(abi: result)
+        }
+
+    }
+
+    public class IRefreshStateChangedEventArgs: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshStateChangedEventArgs }
+
+        internal func get_OldStateImpl() throws -> WinUI.RefreshVisualizerState {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshStateChangedEventArgs.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OldState(pThis, &value))
+            }
+            return value
+        }
+
+        internal func get_NewStateImpl() throws -> WinUI.RefreshVisualizerState {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshStateChangedEventArgs.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_NewState(pThis, &value))
+            }
+            return value
+        }
+
+    }
+
+    public class IRefreshVisualizer: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer }
+
+        internal func RequestRefreshImpl() throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.RequestRefresh(pThis))
+            }
+        }
+
+        internal func get_OrientationImpl() throws -> WinUI.RefreshVisualizerOrientation {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerOrientation = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Orientation(pThis, &value))
+            }
+            return value
+        }
+
+        internal func put_OrientationImpl(_ value: WinUI.RefreshVisualizerOrientation) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Orientation(pThis, value))
+            }
+        }
+
+        internal func get_ContentImpl() throws -> WinUI.UIElement? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_Content(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func put_ContentImpl(_ value: WinUI.UIElement?) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.put_Content(pThis, RawPointer(value)))
+            }
+        }
+
+        internal func get_StateImpl() throws -> WinUI.RefreshVisualizerState {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CRefreshVisualizerState = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_State(pThis, &value))
+            }
+            return value
+        }
+
+        internal func add_RefreshRequestedImpl(_ handler: TypedEventHandler<WinUI.RefreshVisualizer?, WinUI.RefreshRequestedEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshRequestedEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_RefreshRequested(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_RefreshRequestedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_RefreshRequested(pThis, token))
+            }
+        }
+
+        internal func add_RefreshStateChangedImpl(_ handler: TypedEventHandler<WinUI.RefreshVisualizer?, WinUI.RefreshStateChangedEventArgs?>?) throws -> EventRegistrationToken {
+            var token: EventRegistrationToken = .init()
+            let handlerWrapper = WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshVisualizer___x_ABI_CMicrosoft__CUI__CXaml__CControls__CRefreshStateChangedEventArgsWrapper(handler)
+            let _handler = try! handlerWrapper?.toABI { $0 }
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.add_RefreshStateChanged(pThis, _handler, &token))
+            }
+            return token
+        }
+
+        internal func remove_RefreshStateChangedImpl(_ token: EventRegistrationToken) throws {
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizer.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.remove_RefreshStateChanged(pThis, token))
+            }
+        }
+
+    }
+
+    public class IRefreshVisualizerFactory: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerFactory }
+
+        internal func CreateInstanceImpl(_ baseInterface: UnsealedWinRTClassWrapper<WinUI.RefreshVisualizer.Composable>?, _ innerInterface: inout WindowsFoundation.IInspectable?) throws -> IRefreshVisualizer {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                let _baseInterface = baseInterface?.toIInspectableABI { $0 }
+                let (_innerInterface) = try ComPtrs.initialize { _innerInterfaceAbi in
+                    _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerFactory.self) { pThis in
+                        try CHECKED(pThis.pointee.lpVtbl.pointee.CreateInstance(pThis, _baseInterface, &_innerInterfaceAbi, &valueAbi))
+                    }
+                }
+                innerInterface = WindowsFoundation.IInspectable(_innerInterface!)
+            }
+            return IRefreshVisualizer(value!)
+        }
+
+    }
+
+    public class IRefreshVisualizerStatics: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerStatics }
+
+        internal func get_InfoProviderPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_InfoProviderProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_OrientationPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_OrientationProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_ContentPropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_ContentProperty(pThis, &valueAbi))
+                }
+            }
+            return .from(abi: value)
+        }
+
+        internal func get_StatePropertyImpl() throws -> WinUI.DependencyProperty? {
+            let (value) = try ComPtrs.initialize { valueAbi in
+                _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIRefreshVisualizerStatics.self) { pThis in
+                    try CHECKED(pThis.pointee.lpVtbl.pointee.get_StateProperty(pThis, &valueAbi))
                 }
             }
             return .from(abi: value)
